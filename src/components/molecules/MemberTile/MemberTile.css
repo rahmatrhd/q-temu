@@ -1,0 +1,13 @@
+.member-tile {
+  display: flex;
+  padding: 10px;
+  background-color: rgba(0,0,0,0.2);
+}
+
+.member-tile-avatar {
+  margin-right: 5px;
+}
+
+.member-tile-content {
+  flex: 1;
+}
