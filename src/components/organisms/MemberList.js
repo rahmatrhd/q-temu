@@ -2,7 +2,7 @@ import React from 'react'
 import MemberTile from '../molecules/MemberTile'
 
 const MemberList = ({ members }) => (
-  <ul>
+  <ul style={{ padding: 0, }}>
     {members.map(({ name, title, avatar}) => {
       return (
         <MemberTile
