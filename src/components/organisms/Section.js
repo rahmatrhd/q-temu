@@ -6,12 +6,12 @@ class Section extends React.Component {
     return (
       <div style={{
         textAlign: 'left',
-        backgroundColor: 'yellow'
+        marginBottom: 30,
       }}>
         <Text variant="title">{this.props.title}</Text>
         <div style={{
-          paddingLeft: 30,
-          paddingRight: 30
+          padding: 30,
+          backgroundColor: 'rgba(0,0,0,0.1)',
         }}>
           {this.props.children}
         </div>
