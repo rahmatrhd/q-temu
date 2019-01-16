@@ -9,7 +9,16 @@ import React from 'react'
 
 // stateless component
 const Text = (props) => {
-  return <p {...props} />
+  const { variant } = props
+
+  return (
+    <p
+      {...props}
+      style={{
+        fontWeight: (variant === 'title') && 'bold'
+      }}
+    />
+  )
 }
 
 export default Text

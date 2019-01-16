@@ -8,11 +8,7 @@ class Section extends React.Component {
         textAlign: 'left',
         backgroundColor: 'yellow'
       }}>
-        <Text
-          style={{
-            fontWeight: 'bold'
-          }}
-        >{this.props.title}</Text>
+        <Text variant="title">{this.props.title}</Text>
         <div style={{
           paddingLeft: 30,
           paddingRight: 30
