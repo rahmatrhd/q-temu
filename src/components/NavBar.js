@@ -22,7 +22,8 @@ class NavBar extends React.Component {
           listStyleType: 'none',
           margin: 0,
           padding: 0,
-          backgroundColor: 'rgba(0,0,0,0.2)'
+          backgroundColor: 'rgba(0,0,0,0.2)',
+          padding: 20,
         }}
       >
         <NavbarMenu>{this.props.title}</NavbarMenu>
