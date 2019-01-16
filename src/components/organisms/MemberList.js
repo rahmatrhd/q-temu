@@ -6,6 +6,7 @@ const MemberList = ({ members }) => (
     {members.map(({ name, title, avatar}) => {
       return (
         <MemberTile
+          key={name}
           avatar={avatar}
           title={title}
           name={name}
