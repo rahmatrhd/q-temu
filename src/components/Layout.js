@@ -8,7 +8,13 @@ class Layout extends React.Component {
         <div id="header">
           <NavBar title={this.props.header}/>
         </div>
-        <div id="content">
+        <div
+          id="content"
+          style={{
+            paddingLeft: 30,
+            paddingRight: 30,
+          }}
+        >
           {this.props.children}
         </div>
         <div id="footer">
