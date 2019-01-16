@@ -1,6 +1,7 @@
 import React from 'react'
 import Layout from '../components/Layout'
 import Section from '../components/organisms/Section'
+import MainMeetup from '../components/molecules/MainMeetup'
 
 class Home extends React.Component {
   render() {
@@ -9,7 +10,9 @@ class Home extends React.Component {
         header="HIJUP"
         footer="by rahmathd"
       >
-        <h1>Selamat Datang</h1>
+        <Section>
+          <MainMeetup />
+        </Section>
         <Section title="Next Meetup">
           Next Meetup Content
         </Section>
