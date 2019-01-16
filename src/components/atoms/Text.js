@@ -8,12 +8,11 @@ import React from 'react'
 // }
 
 // stateless component
-const Text = (props) => {
-  const { variant } = props
+const Text = ({ variant, ...restProps }) => {
 
   return (
     <p
-      {...props}
+      {...restProps}
       style={{
         fontWeight: (variant === 'title') && 'bold'
       }}
