@@ -3,6 +3,7 @@ import Layout from '../components/Layout'
 import Section from '../components/organisms/Section'
 import MainMeetup from '../components/molecules/MainMeetup'
 import MemberList from '../components/organisms/MemberList'
+import axios from 'axios'
 
 class Home extends React.Component {
   constructor(props) {
@@ -33,6 +34,30 @@ class Home extends React.Component {
       ]
     }
   }
+
+  componentDidMount() {
+    console.log('halo componentDidMount')
+    axios.get('https://swapi.co/api/people/')
+      .then(response => {
+        console.log('response', response)
+
+        const members = response.data.results.map((item) => {
+          return {
+            avatar: item.skin_color,
+            name: item.name,
+            title: item.hair_color,
+          }
+        })
+
+        this.setState({
+          members: members
+        })
+      })
+      .catch(error => {
+        console.log('axios error nih', error)
+      })
+  }
+
   render() {
     return (
       <Layout
