@@ -10,28 +10,8 @@ class Home extends React.Component {
     super(props)
 
     this.state = {
-      members: [
-        {
-          avatar: 'https://placehold.it/50x50',
-          name: 'Adhy Wiranata',
-          title: 'Organizers',
-        },
-        {
-          avatar: 'https://placehold.it/50x50',
-          name: 'Peter Parker',
-          title: 'Spider Man',
-        },
-        {
-          avatar: 'https://placehold.it/50x50',
-          name: 'Tony Stark',
-          title: 'Iron Man',
-        },
-        {
-          avatar: 'https://placehold.it/50x50',
-          name: 'Thor',
-          title: 'God of Thunder',
-        }
-      ]
+      error: false,
+      members: []
     }
   }
 
@@ -55,6 +35,9 @@ class Home extends React.Component {
       })
       .catch(error => {
         console.log('axios error nih', error)
+        this.setState({
+          error: true
+        })
       })
   }
 
@@ -66,15 +49,15 @@ class Home extends React.Component {
     console.log('haloo component did update')
   }
 
-  shouldComponentUpdate(nextProps, nextState) {
-    console.log('this.state', this.state)
-    console.log('nextState', nextState)
+  // shouldComponentUpdate(nextProps, nextState) {
+  //   console.log('this.state', this.state)
+  //   console.log('nextState', nextState)
 
-    if (nextState.members.length >= 20)
-      return true
-    else
-      return false
-  }
+  //   if (nextState.members.length >= 10)
+  //     return true
+  //   else
+  //     return false
+  // }
 
   render() {
     console.log('render gais')
@@ -93,7 +76,11 @@ class Home extends React.Component {
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo consequuntur est, porro dicta excepturi molestias reprehenderit consequatur debitis labore voluptas molestiae cumque, commodi totam sed sapiente nulla vero consectetur eaque?
         </Section>
         <Section title="Members">
-          <MemberList members={this.state.members} />
+          {this.state.members.length === 0 ? 
+            (this.state.error ? 'error nih' : 'loading...')
+            :
+            <MemberList members={this.state.members} />
+          }
         </Section>
       </Layout>
     )
