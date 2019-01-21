@@ -58,7 +58,26 @@ class Home extends React.Component {
       })
   }
 
+  componentWillUpdate() {
+    console.log('haloo component WILL update')
+  }
+
+  componentDidUpdate() {
+    console.log('haloo component did update')
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    console.log('this.state', this.state)
+    console.log('nextState', nextState)
+
+    if (nextState.members.length >= 20)
+      return true
+    else
+      return false
+  }
+
   render() {
+    console.log('render gais')
     return (
       <Layout
         header="HIJUP"
