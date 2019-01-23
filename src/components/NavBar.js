@@ -1,13 +1,14 @@
 import React from 'react'
+import AppBar from '@material-ui/core/AppBar'
+import Toolbar from '@material-ui/core/Toolbar'
+import Button from '../components/atoms/Button'
+import Text from '../components/atoms/Text'
 
 class NavbarMenu extends React.Component {
   render() {
     return (
-      <li
-        style={{
-          display: 'inline',
-          padding: 20,
-        }}
+      <Button
+        color="inherit"
         {...this.props}
       />
     )
@@ -17,20 +18,14 @@ class NavbarMenu extends React.Component {
 class NavBar extends React.Component {
   render() {
     return (
-      <ul
-        style={{
-          listStyleType: 'none',
-          margin: 0,
-          padding: 0,
-          backgroundColor: 'rgba(0,0,0,0.2)',
-          padding: 20,
-        }}
-      >
-        <NavbarMenu>{this.props.title}</NavbarMenu>
-        <NavbarMenu>Home</NavbarMenu>
-        <NavbarMenu>Create Meetup</NavbarMenu>
-        <NavbarMenu>Explore</NavbarMenu>
-      </ul>
+      <AppBar position="static">
+        <Toolbar>
+          <Text variant="title" color="inherit">{this.props.title}</Text>
+          <NavbarMenu>Home</NavbarMenu>
+          <NavbarMenu>Create Meetup</NavbarMenu>
+          <NavbarMenu>Explore</NavbarMenu>
+        </Toolbar>
+      </AppBar>
     )
   }
 }
