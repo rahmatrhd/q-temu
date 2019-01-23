@@ -1,13 +1,3 @@
-import React from 'react'
-
-const Avatar = ({ src, ...restProps }) => (
-  <img
-    {...restProps}
-    src={src}
-    style={{
-      borderRadius: 1000,
-    }}
-  />
-)
+import Avatar from '@material-ui/core/Avatar'
 
 export default Avatar
