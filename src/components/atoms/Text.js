@@ -1,4 +1,5 @@
 import React from 'react'
+import styled from 'styled-components'
 
 // stateful component
 // class Text extends React.Component {
@@ -7,15 +8,17 @@ import React from 'react'
 //   }
 // }
 
+const StyledText = styled.p`
+  font-weight: ${({ variant }) => (variant === 'title') && 'bold' };
+  background-color: papayawhip;
+`
+
 // stateless component
 const Text = ({ variant, ...restProps }) => {
 
   return (
-    <p
+    <StyledText
       {...restProps}
-      style={{
-        fontWeight: (variant === 'title') && 'bold'
-      }}
     />
   )
 }
