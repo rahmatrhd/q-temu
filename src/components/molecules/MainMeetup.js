@@ -6,7 +6,10 @@ import Button from '../atoms/Button'
 const MainMeetup = () => (
   <div style={{ display: 'flex'}}>
     <div style={{ marginRight: 30, }}>
-      <Avatar src="https://placehold.it/200x200"/>
+      <Avatar
+        style={{ width: 150, height: 150 }}
+        src="https://placehold.it/200x200"
+      />
     </div>
     <div style={{ flex: 1 }}>
       <Text variant="title">Hacktiv8 Meetup</Text>
@@ -19,7 +22,7 @@ const MainMeetup = () => (
       <Text>
         Organizers: Adhy Wiranata
       </Text>
-      <Button>Join Us</Button>
+      <Button color="primary" variant="raised" size="large">Join Us</Button>
     </div>
   </div>
 )
