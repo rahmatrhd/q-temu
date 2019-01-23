@@ -12,14 +12,14 @@ const MainMeetup = () => (
       />
     </div>
     <div style={{ flex: 1 }}>
-      <Text variant="title">Hacktiv8 Meetup</Text>
-      <Text>
+      <Text variant="title" gutterBottom>Hacktiv8 Meetup</Text>
+      <Text gutterBottom>
         Location: Jakarta, Indonesia
       </Text>
-      <Text>
+      <Text gutterBottom>
         Members: 1,024
       </Text>
-      <Text>
+      <Text gutterBottom>
         Organizers: Adhy Wiranata
       </Text>
       <Button color="primary" variant="raised" size="large">Join Us</Button>
