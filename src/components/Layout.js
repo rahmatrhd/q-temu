@@ -1,5 +1,6 @@
 import React from 'react'
 import NavBar from './NavBar'
+import Text from '../components/atoms/Text'
 
 class Layout extends React.Component {
   render() {
@@ -18,7 +19,9 @@ class Layout extends React.Component {
           {this.props.children}
         </div>
         <div id="footer">
-          {this.props.footer}
+          <Text align="center" variant="caption" gutterBottom>
+            {this.props.footer}
+          </Text>
         </div>
       </React.Fragment>
     )
