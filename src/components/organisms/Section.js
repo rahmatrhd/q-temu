@@ -1,21 +1,20 @@
 import React from 'react'
 import Text from '../atoms/Text'
+import Card from '@material-ui/core/Card'
+import CardContent from '@material-ui/core/CardContent'
 
 class Section extends React.Component {
   render() {
     return (
-      <div style={{
+      <Card style={{
         textAlign: 'left',
         marginBottom: 30,
       }}>
-        <Text variant="title">{this.props.title}</Text>
-        <div style={{
-          padding: 30,
-          backgroundColor: 'rgba(0,0,0,0.1)',
-        }}>
+        <CardContent>
+        <Text variant="title" gutterBottom>{this.props.title}</Text>
           {this.props.children}
-        </div>
-      </div>
+        </CardContent>
+      </Card>
     )
   }
 }

@@ -1,26 +1,12 @@
-import React from 'react'
-import styled from 'styled-components'
+// import React from 'react'
+import Typography from '@material-ui/core/Typography'
 
-// stateful component
-// class Text extends React.Component {
-//   render() {
-//     return <p {...this.props} />
-//   }
+// const Text = ({ ...restProps }) => {
+//   return (
+//     <Typography
+//       {...restProps}
+//     />
+//   )
 // }
 
-const StyledText = styled.p`
-  font-weight: ${({ variant }) => (variant === 'title') && 'bold' };
-  background-color: papayawhip;
-`
-
-// stateless component
-const Text = ({ variant, ...restProps }) => {
-
-  return (
-    <StyledText
-      {...restProps}
-    />
-  )
-}
-
-export default Text
+export default Typography
