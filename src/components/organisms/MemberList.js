@@ -1,8 +1,9 @@
 import React from 'react'
 import MemberTile from '../molecules/MemberTile'
+import List from '@material-ui/core/List'
 
 const MemberList = ({ members }) => (
-  <ul style={{ padding: 0, }}>
+  <List>
     {members.map(({ name, title, avatar}) => {
       return (
         <MemberTile
@@ -13,7 +14,7 @@ const MemberList = ({ members }) => (
         />
       )
     })}
-  </ul>
+  </List>
 )
 
 export default MemberList
