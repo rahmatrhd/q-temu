@@ -4,6 +4,7 @@ import Toolbar from '@material-ui/core/Toolbar'
 import Button from '../components/atoms/Button'
 import Text from '../components/atoms/Text'
 import Grid from '@material-ui/core/Grid'
+import { Link } from 'react-router-dom'
 
 class NavbarMenu extends React.Component {
   render() {
@@ -17,6 +18,9 @@ class NavbarMenu extends React.Component {
 }
 
 class NavBar extends React.Component {
+  componentWillUnmount() {
+    console.log('apakah Navbar ke unmount?')
+  }
   render() {
     return (
       <AppBar position="static">
@@ -26,9 +30,12 @@ class NavBar extends React.Component {
               <Text variant="title" color="inherit">{this.props.title}</Text>
             </Grid>
             <Grid item>
-              <NavbarMenu>Home</NavbarMenu>
-              <NavbarMenu>Create Meetup</NavbarMenu>
-              <NavbarMenu>Explore</NavbarMenu>
+              <Link to="/">
+                <NavbarMenu>Home</NavbarMenu>
+              </Link>
+              <Link to="/login">
+                <NavbarMenu>Login</NavbarMenu>
+              </Link>
             </Grid>
           </Grid>
         </Toolbar>

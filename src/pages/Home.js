@@ -1,5 +1,4 @@
 import React from 'react'
-import Layout from '../components/Layout'
 import Section from '../components/organisms/Section'
 import MainMeetup from '../components/molecules/MainMeetup'
 import MemberList from '../components/organisms/MemberList'
@@ -62,10 +61,7 @@ class Home extends React.Component {
   render() {
     console.log('render gais')
     return (
-      <Layout
-        header="HIJUP"
-        footer="by rahmathd"
-      >
+      <React.Fragment>
         <Section>
           <MainMeetup />
         </Section>
@@ -82,7 +78,7 @@ class Home extends React.Component {
             <MemberList members={this.state.members} />
           }
         </Section>
-      </Layout>
+      </React.Fragment>
     )
   }
 }
