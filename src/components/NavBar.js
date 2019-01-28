@@ -33,6 +33,9 @@ class NavBar extends React.Component {
               <Link to="/">
                 <NavbarMenu>Home</NavbarMenu>
               </Link>
+              <Link to="/about">
+                <NavbarMenu>About</NavbarMenu>
+              </Link>
               <Link to="/login">
                 <NavbarMenu>Login</NavbarMenu>
               </Link>
