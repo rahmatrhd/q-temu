@@ -1,8 +1,13 @@
-import { createStore, combineReducers } from 'redux'
+import { createStore, combineReducers, applyMiddleware } from 'redux'
 import app from '../common/reducers/app'
+import logger from 'redux-logger'
 
 const reducers = combineReducers({
   app: app,
 })
 
-export default createStore(reducers)
+const middlewares = applyMiddleware(
+  logger,
+)
+
+export default createStore(reducers, middlewares)
