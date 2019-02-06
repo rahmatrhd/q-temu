@@ -4,8 +4,10 @@ import Avatar from '../atoms/Avatar'
 import Button from '../atoms/Button'
 import Grid from '@material-ui/core/Grid'
 import withWidth from '@material-ui/core/withWidth'
+import { connect } from 'react-redux'
+import { changePageTitle } from '../../common/actions/app'
 
-const MainMeetup = ({ width }) => {
+const MainMeetup = ({ width, changePageTitle }) => {
   const isMobileScreen = width === 'xs' || width === 'sm'
 
   return (
@@ -28,6 +30,8 @@ const MainMeetup = ({ width }) => {
           Organizers: Adhy Wiranata
         </Text>
         <Button color="primary" variant="raised" size="large">Join Us</Button>
+        <Button size="large" onClick={() => changePageTitle('Hijup')}>Change Title Jadi Hijup</Button>
+        <Button size="large" onClick={() => changePageTitle('QTemu')}>Change Title Jadi QTemu</Button>
       </Grid>
     </Grid>
   )
@@ -39,4 +43,10 @@ const MainMeetup = ({ width }) => {
 // const applyWidth = withWidth()
 // export default applyWidth(MainMeetup)
 
-export default withWidth()(MainMeetup)
+const WithWidthMainMeetup = withWidth()(MainMeetup)
+
+const mapDispatchToProps = {
+  changePageTitle: changePageTitle
+}
+
+export default connect(null, mapDispatchToProps)(WithWidthMainMeetup)

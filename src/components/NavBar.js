@@ -5,6 +5,7 @@ import Button from '../components/atoms/Button'
 import Text from '../components/atoms/Text'
 import Grid from '@material-ui/core/Grid'
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
 
 class NavbarMenu extends React.Component {
   render() {
@@ -22,12 +23,13 @@ class NavBar extends React.Component {
     console.log('apakah Navbar ke unmount?')
   }
   render() {
+    const { aplikasi } = this.props
     return (
       <AppBar position="static">
         <Toolbar>
           <Grid container alignItems="center" justify="space-between">
             <Grid item>
-              <Text variant="title" color="inherit">{this.props.title}</Text>
+              <Text variant="title" color="inherit">{aplikasi.pageTitle}</Text>
             </Grid>
             <Grid item>
               <Link to="/">
@@ -47,4 +49,11 @@ class NavBar extends React.Component {
   }
 }
 
-export default NavBar
+const mapStateToProps = (state) => {
+  console.log('ini state', state)
+  return {
+    aplikasi: state.app,
+  }
+}
+
+export default connect(mapStateToProps)(NavBar)
