@@ -27,7 +27,7 @@ class App extends Component {
           <BrowserRouter>
             <Layout
               header="HIJUP"
-              footer="by rahmathd"
+              footer="copyright rahmathd"
             >
               <Route exact path="/" component={Home} />
               <Route path="/login" component={Login} />
